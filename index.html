@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>1301 banned players check</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython_stdlib.js"></script>
+</head>
+
+<body>
+    <h2>1301 banned players check</h2>
+
+    <input id="player_id" type="number" placeholder="Enter player ID">
+    <button id="check_button">check</button>
+    <div id="output" style="white-space: pre-wrap;"></div>
+
+    <script type="text/javascript">
+        window.onload = function() {
+            brython({debug: 1, pythonpath: ['.']})
+        }
+    </script>
+
+    <script type="text/python">
+        from browser import document
+        from main import request_data, check_player
+
+
+        request_data()
+
+
+        def player_id_keypress(event):
+            if event.key == "Enter":
+                check_player()
+
+
+        document["player_id"].bind("keypress", player_id_keypress)
+        document["check_button"].bind("click", check_player)
+    </script>
+
+</body>
+</html>
