@@ -9,12 +9,18 @@
 </head>
 
 <body>
-    <h2>1301 banned players check</h2>
+    <div class="container mt-4">
+        <div class="container mt-4">
+            <h2>1301 banned players check</h2>
+        </div>
 
-    <input id="player_id" type="number" placeholder="Enter player ID">
-    <button id="check_button">check</button>
-    <div id="output" style="white-space: pre-wrap;"></div>
+        <div class="container mt-4">
+            <input id="player_id" type="number" placeholder="Enter player ID">
+            <button id="check_button">check</button>
+        </div>
 
+        <div id="output" style="white-space: pre-wrap;" class="container mt-4"></div>
+    </div>
     <script type="text/javascript">
         window.onload = function() {
             brython({debug: 1, pythonpath: ['.']})
